@@ -73,13 +73,13 @@
                 </div>
 
                 <div class="tab-pane fade" id="nav-bai-2" role="tabpanel" aria-labelledby="nav-bai-2-tab" tabindex="0">
-                    <h4 class="mt-4">Viết chương trình nhập vào tháng năm. Cho biết tháng đó có bao nhiêu ngày</h4>
+                    <h4 class="mt-4">Viết chương trình nhập vào thông tin tiêu thụ điện. Tính tiền điện của tháng đó</h4>
                     <br>
                     <div class="xuLy d-flex">
-                        <input type="number" class="form-control w-25 me-4" id="thang-2" placeholder="Nhập tháng">
-                        <input type="number" class="form-control w-25 me-4" id="nam-2" placeholder="Nhập năm">
+                        <input type="text" class="form-control w-25 me-4" id="hoTen" placeholder="Họ tên">
+                        <input type="number" class="form-control w-25 me-4" id="kw" placeholder="Số Kw">
                         
-                        <button id="btnTinhNgay" onclick="checkMonth()" type="submit" class="btn btn-primary text-white">Tính ngày</button>
+                        <button id="btnTinhTienDien" onclick="tinhTienDien()" type="submit" class="btn btn-primary text-white">Tính tiền điện</button>
                     </div>
                     <br>
                     <div class="ketQua">
@@ -87,13 +87,15 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-bai-3" role="tabpanel" aria-labelledby="nav-bai-3-tab" tabindex="0">
-                    <h4 class="mt-4">Viết chương trình nhập vào số nguyên có 3 chữ số. In ra cách đọc nó</h4>
+                    <h4 class="mt-4">Viết chương trình tính thuế thu nhập cá nhân</h4>
                     <br>
                     <div class="xuLy d-flex">
-                        <input type="text" class="form-control w-50 me-4" id="num3-1" placeholder="Nhập vào số có 3 chữ số">
+                        <input type="text" class="form-control w-25 me-4" id="hoTenb2" placeholder="Họ tên">
+                        <input type="number" class="form-control w-25 me-4" id="tongThuNhap" placeholder="Tổng thu nhập năm">
+                        <input type="number" class="form-control w-25 me-4" id="nguoiPhuThuoc" placeholder="Số người phụ thuộc">
                         
                     </div>
-                    <button id="btnDemSo" onclick="DocSo()" type="submit" class="btn btn-primary text-white my-4">Đọc số</button>
+                    <button id="btnTinhThue" onclick="tinhThue()" type="submit" class="btn btn-primary text-white my-4">Tính thuế</button>
                     <div class="ketQua">
                         <span class="form-control alert alert-success">👉<span id="ketQua-b3"></span></span>
                     </div>
