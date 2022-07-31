@@ -94,6 +94,23 @@ function khuVuc(){
     }
     
     //Bài 3: tính thuế TNCN
+    
+
+    function tinhThue(){
+        let hoTen = document.getElementById('hoTenb2').value;
+        let tongThuNhap = +document.getElementById('tongThuNhap').value;
+        let nguoiPhuThuoc = +document.getElementById('nguoiPhuThuoc').value;
+        let tnChiuThue = 0;
+        let mucThueTN = mucThue();
+        let tienThue = 0;
+
+        tnChiuThue = tongThuNhap - 4e+6 - (nguoiPhuThuoc * 1600000);
+
+        tienThue = tnChiuThue * mucThueTN;
+        document.getElementById('ketQua-b3').innerHTML = 'Thuế thu nhập cá nhân của ' + hoTen + ' là: ' + tienThue.toLocaleString() + ' VNĐ';
+
+    }
+
     function mucThue(){
         let thuNhap = +document.getElementById('tongThuNhap').value;
         let mucThue = 0;
@@ -116,16 +133,52 @@ function khuVuc(){
         return mucThue;
     }
 
-    function tinhThue(){
-        let hoTen = document.getElementById('hoTenb2').value;
-        let tongThuNhap = +document.getElementById('tongThuNhap').value;
-        let nguoiPhuThuoc = +document.getElementById('nguoiPhuThuoc').value;
-        let tnChiuThue = 0;
-        let mucThue = mucThue();
+    //Bài 4: Tính tiền cáp
+   
+    
 
-        tnChiuThue = tongThuNhap - 4e+6 - (nguoiPhuThuoc * 1600000);
+    function selectKH(){
+        let ketNoi  = document.getElementById('soKetNoi');
+        let KH = document.getElementById('chonKH').value;
+        if (KH === "doanhNghiep"){
+            ketNoi.style.display = "block";
+        }else if(KH === "nhaDan"){
+            ketNoi.style.display = "none";
+        }
+    }
 
-        let tienThue = tnChiuThue * mucThue;
-        document.getElementById('ketQua-b3').innerHTML = 'Thuế thu nhập cá nhân của ' + hoTenb2 + ' là: ' + tienThue + ' VNĐ';
+    function phiDV(){
+        let soKetNoiDN = +document.getElementById('soKetNoi').value;
+        let donGiaKetNoi = 0;
 
+        if (soKetNoiDN > 0 && soKetNoiDN <= 10){
+            donGiaKetNoi = 75;
+        }else if (soKetNoiDN > 10){
+            donGiaKetNoi = 75 + (soKetNoiDN - 10)*5;
+        }
+        return donGiaKetNoi;
+    }
+
+    function tinhTienCap(){
+        
+        let phiHDDan = 4.5;
+        let phiDVDan = 20.5;
+        let soKenhDan = 7.5;
+        let phiHDDN = 15;
+        let phiDVDN = phiDV();
+        let kenhDN = 50;
+
+        //DOM
+        let maKH = document.getElementById('maKH').value;
+        let SoCaoCap = +document.getElementById('kenhCaoCap').value;
+        let KH = document.getElementById('chonKH').value;
+        let tienCap = 0;
+
+        if (KH === "nhaDan"){
+            tienCap = phiHDDan + phiDVDan + (soKenhDan * SoCaoCap);
+        }else if (KH === "doanhNghiep"){
+            tienCap = phiHDDN + phiDVDN + (kenhDN * SoCaoCap);
+        }
+        console.log(tienCap);
+        document.getElementById('ketQua-b4').innerHTML = "Mã khách hàng: " + maKH + "; Tiền cáp: $" + tienCap.toLocaleString();
     }

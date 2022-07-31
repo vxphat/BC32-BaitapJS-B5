@@ -101,38 +101,22 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-bai-4" role="tabpanel" aria-labelledby="nav-bai-4-tab" tabindex="0">
-                    <h4 class="mt-4">Viết chương trình in tên sinh viên xa trường nhất</h4>
+                    <h4 class="mt-4">Viết chương trình tính tiền cáp</h4>
                    <br>
-                   <p>Sinh viên 1</p>
-                    <div class="sv1 d-flex">
-                        <input type="text" class="form-control w-50 me-4" id="nameSV1" placeholder="Nhập tên sinh viên 1">
-                        <input type="number" class="form-control w-50 me-4" id="x1" placeholder="Nhập tọa độ x">
-                        <input type="number" class="form-control w-50 me-4" id="y1" placeholder="Nhập tọa độ y">
-                    </div>
-                    <br>
-                    <p>Sinh viên 2</p>
-                    <div class="sv2 d-flex">
-                        <input type="text" class="form-control w-50 me-4" id="nameSV2" placeholder="Nhập tên sinh viên 2">
-                        <input type="number" class="form-control w-50 me-4" id="x2" placeholder="Nhập tọa độ x">
-                        <input type="number" class="form-control w-50 me-4" id="y2" placeholder="Nhập tọa độ y">
-                    </div>
-                    <br>
-                    <p>Sinh viên 3</p>
-                    <div class="sv3 d-flex">
-                        <input type="text" class="form-control w-50 me-4" id="nameSV3" placeholder="Nhập tên sinh viên 3">
-                        <input type="number" class="form-control w-50 me-4" id="x3" placeholder="Nhập tọa độ x">
-                        <input type="number" class="form-control w-50 me-4" id="y3" placeholder="Nhập tọa độ y">
-                    </div>
-                    <br>
-                    <p>Trường học</p>
-                    <div class="school d-flex">
-                        <input type="number" class="form-control w-25 me-4" id="x4" placeholder="Nhập tọa độ x">
-                        <input type="number" class="form-control w-25 me-4" id="y4" placeholder="Nhập tọa độ y">
-                    </div>
-                    <button id="btnTim" onclick="timSV()" type="submit" class="btn btn-primary text-white my-4">Tìm</button>
+                   <div class="xuLy d-flex">
+                    <select name="" id="chonKH" class="form-control w-25 me-4" onchange="selectKH()">
+                        <option value="">Chọn loại khách hàng</option>
+                        <option value="nhaDan">Nhà dân</option>
+                        <option value="doanhNghiep">Doanh nghiệp</option>
+                    </select>
+                    <input type="text" class="form-control w-25 me-4" id="maKH" placeholder="Nhập mã khách hàng">
+                    <input type="number" class="form-control w-25 me-4" id="kenhCaoCap" placeholder="Số kênh cao cấp">
+                </div>
+                <input type="number" class="form-control w-25 mt-4" id="soKetNoi" placeholder="Số kết nối" style="display: none">
+                    <button id="btnTinhTienCap" onclick="tinhTienCap()" type="submit" class="btn btn-primary text-white my-4">Tính tiền</button>
 
                     <div class="ketQua">
-                        <span class="form-control alert alert-success w-50">👉<span id="ketQua-b4"></span></span>
+                        <span class="form-control alert alert-success">👉<span id="ketQua-b4"></span></span>
 
                     </div>
                 </div>
